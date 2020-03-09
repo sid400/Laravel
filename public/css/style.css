@@ -1,4 +1,36 @@
-.main {
+html,
+body {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  height: 100vh;
   margin: 0;
-  padding: 0;
+}
+.linker > a {
+  height: 5vh;
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.linker > a:hover {
+  color: #3b4042;
+}
+.page_hello {
+  font-size: 10rem;
+  text-transform: uppercase;
+  text-align: center;
+  height: 95vh;
+  line-height: 95vh;
+}
+.page_hello h1 {
+  margin: 0;
+}
+.page_info span {
+  text-transform: capitalize;
+  margin-left: 10px;
 }

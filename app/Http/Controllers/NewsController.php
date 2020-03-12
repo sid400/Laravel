@@ -12,6 +12,9 @@ class NewsController extends MainController
     }
     public function newsCard($id)
     {
-        return view('news');
+        echo view('header');
+        echo view('linker');
+        echo view('NewsCard',compact('id'));
+        echo view('footer');
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    protected function CollectTmpl($tmpl)
+    protected function CollectTmpl($tmpl,$params)
     {
         echo view('header');
         echo view('linker');

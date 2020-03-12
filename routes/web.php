@@ -16,3 +16,5 @@ Route::get('/hello', 'HelloController@index');
 Route::get('/info', 'InfoController@index');
 Route::get('/news', 'NewsController@index');
 Route::get('/news/card/{id}', 'NewsController@newsCard');
+
+Route::get('/test', 'TestController@index');

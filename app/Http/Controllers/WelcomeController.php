@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class WelcomeController extends MainController
 {
     public function index()
     {   
-        echo view('header');
-        echo view('linker');
-        echo view('welcome');
-        echo view('footer');
+        self::CollectTmpl('Welcome');
     }
 }

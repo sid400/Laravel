@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class InfoController extends Controller
+class InfoController extends MainController
 {
     public function index()
     {
-        echo view('header');
-        echo view('linker');
-        echo view('Info');
-        echo view('footer');
+        self::CollectTmpl('Info');
     }
 }

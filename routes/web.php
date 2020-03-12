@@ -11,15 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/hello', function () {
-    return view('hello');
-});
-Route::get('/info', function () {
-    return view('info');
-});
-Route::get('/news', function () {
-    return view('news');
-});
+Route::get('/', 'WelcomeController@index')->name('home');
+Route::get('/hello', 'HelloController@index');
+Route::get('/info', 'InfoController@index');
+Route::get('/news', 'NewsController@index');
+Route::get('/news/card/{id}', 'NewsController@newsCard');

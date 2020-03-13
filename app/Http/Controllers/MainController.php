@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    protected function CollectTmpl($tmpl,$params)
+    protected function CollectTmpl($tmpl)
     {
-        echo view('header');
-        echo view('linker');
+        echo view('basic/header');
+        echo view('basic/linker');
         echo view($tmpl);
-        echo view('footer');
+        echo view('basic/footer');
     }
 }

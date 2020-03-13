@@ -12,9 +12,11 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('home');
-Route::get('/hello', 'HelloController@index');
-Route::get('/info', 'InfoController@index');
-Route::get('/news', 'NewsController@index');
+Route::get('/hello', 'HelloController@index')->name('hello');
+Route::get('/info', 'InfoController@index')->name('info');
+Route::get('/test', 'TestController@index')->name('test');
+Route::get('/Auth', 'AuthController@index')->name('Auth');
+Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/admin', 'adminController@addNews')->name('adm/addNews');
 Route::get('/news/card/{id}', 'NewsController@newsCard');
 
-Route::get('/test', 'TestController@index');

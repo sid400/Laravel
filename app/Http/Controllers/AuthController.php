@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WelcomeController extends MainController
+class AuthController extends MainController
 {
     public function index()
-    {   
-        self::CollectTmpl('Welcome');
+    {
+        self::CollectTmpl('Auth');
     }
 }

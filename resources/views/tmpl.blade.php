@@ -1,3 +1,6 @@
+@include ('basic.header')
+@include ('basic.linker')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,3 +12,5 @@
     
 </body>
 </html>
+
+@include ('basic.footer')

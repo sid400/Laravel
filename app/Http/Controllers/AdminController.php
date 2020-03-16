@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends MainController
+class AdminController extends Controller
 {
     public function addNews()
     {
-        self::CollectTmpl('admin/news/addNews');
+        return view('admin/news/AddNews');
     }
 }

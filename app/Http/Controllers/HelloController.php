@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HelloController extends MainController
+class HelloController extends Controller
 {
     public function index()
     {
-        self::CollectTmpl('Hello');
+        return view('Hello');
     }
 }

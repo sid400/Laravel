@@ -7,6 +7,10 @@ body {
   height: 100vh;
   margin: 0;
 }
+body {
+  max-width: 80vw;
+  margin: 0 auto;
+}
 .linker > a {
   height: 5vh;
   color: #636b6f;
@@ -19,6 +23,9 @@ body {
 }
 .linker > a:hover {
   color: #3b4042;
+}
+.logo_text {
+  margin: 3000px auto;
 }
 .page_hello {
   font-size: 10rem;

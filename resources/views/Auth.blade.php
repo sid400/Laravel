@@ -1,3 +1,6 @@
+@include ('basic.header')
+@include ('basic.linker')
+
 <section class="page_auth">
 <h2>войти</h2>
 <form action="" method="post">
@@ -21,3 +24,5 @@
 
 </form>
 </section>
+
+@include ('basic.footer')

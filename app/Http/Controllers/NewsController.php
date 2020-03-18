@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class NewsController extends MainController
+class NewsController extends Controller
 {
     public function index()
     {   
-        self::CollectTmpl('News');
+        return view('News');
     }
     public function newsCard($id)
     {
-        echo view('basic/header');
-        echo view('basic/linker');
-        echo view('NewsCard',compact('id'));
-        echo view('basic/footer');
+        return view('NewsCard',compact('id'));
     }
 }

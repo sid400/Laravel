@@ -16,7 +16,22 @@ Route::get('/hello', 'HelloController@index')->name('hello');
 Route::get('/info', 'InfoController@index')->name('info');
 Route::get('/test', 'TestController@index')->name('test');
 Route::get('/Auth', 'AuthController@index')->name('Auth');
-Route::get('/news', 'NewsController@index')->name('news');
-Route::get('/admin', 'adminController@addNews')->name('adm/addNews');
-Route::get('/news/card/{id}', 'NewsController@newsCard');
 
+Route::get('/admin', 'adminController@addNews')->name('adm/addNews');
+
+Route::group([
+    'prefix'=> 'news',
+    'as'=> 'news::',
+],function(){
+    Route::get('/categories', 'NewsController@index')
+    ->name('categories'); 
+    
+    Route::get('/card/{id}', 'NewsController@newsCard')
+    ->name('id'); ;
+});
+// Route::get('/news/card/{id}', 'NewsController@newsCard');
+// Route::get('/news', 'NewsController@index')->name('news');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

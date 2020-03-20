@@ -17,7 +17,7 @@ Route::get('/info', 'InfoController@index')->name('info');
 Route::get('/test', 'TestController@index')->name('test');
 Route::get('/Auth', 'AuthController@index')->name('Auth');
 
-Route::get('/admin', 'adminController@addNews')->name('adm/addNews');
+// Route::get('/admin', 'adminController@addNews')->name('adm/addNews');
 
 Route::group([
     'prefix'=> 'admin',
@@ -28,7 +28,7 @@ Route::group([
     Route::match(['get','post'],'/add', 'admin\AdminNewsController@addNews')
     ->name('add');
 
-    
+
 });
 
 Route::group([
@@ -36,8 +36,8 @@ Route::group([
     'as'=> 'news::',
 ],function(){
     Route::get('/categories', 'NewsController@index')
-    ->name('categories'); 
-    
+    ->name('categories');
+
     Route::get('/card/{id}', 'NewsController@newsCard')
     ->name('id');
 });

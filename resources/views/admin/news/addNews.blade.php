@@ -8,7 +8,8 @@
 @section('content')
 <section class="page_admin_addnews">
     <H1>Add News</H1>
-    <form action="" method="post">
+    <form action="{{route('admin::add')}}" method="post">
+        @csrf
         <div class="form-group">
             <label for="news_title">Заголовок</label>
             <input name="title" type="text" class="form-control" id="news_title">
@@ -20,11 +21,10 @@
         <div class="form-group">
             <label for="news_categories">Example select</label>
             <select class="form-control" name="categories" id="news_categories">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                @foreach( $categories as $key => $value)
+                <option value="{{$key}}">{{$value}}</option>
+                @endforeach
+
             </select>
         </div>
         <!-- <div class="form-group form-check">

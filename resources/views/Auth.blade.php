@@ -1,6 +1,11 @@
-@include ('basic.header')
-@include ('basic.linker')
+@extends('layouts.main')
 
+@section('title')
+Авторизация
+@endsection
+
+
+@section('content')
 <section class="page_auth">
 <h2>войти</h2>
 <form action="" method="post">
@@ -24,5 +29,5 @@
 
 </form>
 </section>
+@endsection
 
-@include ('basic.footer')

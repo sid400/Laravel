@@ -35,10 +35,12 @@ Route::group([
     'prefix'=> 'news',
     'as'=> 'news::',
 ],function(){
-    Route::get('/categories', 'NewsController@index')
-    ->name('categories');
+    Route::get('/', 'news\NewsController@index')
+    ->name('news');
+    Route::get('/category/{id}', 'news\NewsController@newsCategories')
+    ->name('category');
 
-    Route::get('/card/{id}', 'NewsController@newsCard')
+    Route::get('/card/{id}', 'news\NewsController@newsCard')
     ->name('id');
 });
 // Route::get('/news/card/{id}', 'NewsController@newsCard');

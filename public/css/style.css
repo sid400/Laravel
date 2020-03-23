@@ -41,3 +41,36 @@ body {
   text-transform: capitalize;
   margin-left: 10px;
 }
+.category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.NewsCategoryNum {
+  display: inline-block;
+  height: 50px;
+  font-size: 30px;
+}
+.NewsCategory {
+  display: inline-block;
+  height: 50px;
+  font-size: 30px;
+  margin-left: 15px;
+}
+.NewsCategoryCount {
+  display: inline-block;
+  line-height: 30px;
+  font-size: 10px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background-color: grey;
+  text-align: center;
+  color: white;
+  margin-left: 10px;
+}

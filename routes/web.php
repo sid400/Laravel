@@ -17,8 +17,6 @@ Route::get('/info', 'InfoController@index')->name('info');
 Route::get('/test', 'TestController@index')->name('test');
 Route::get('/Auth', 'AuthController@index')->name('Auth');
 
-// Route::get('/admin', 'adminController@addNews')->name('adm/addNews');
-
 Route::group([
     'prefix'=> 'admin',
     'as'=> 'admin::',
@@ -43,8 +41,6 @@ Route::group([
     Route::get('/card/{id}', 'news\NewsController@newsCard')
     ->name('id');
 });
-// Route::get('/news/card/{id}', 'NewsController@newsCard');
-// Route::get('/news', 'NewsController@index')->name('news');
 
 Auth::routes();
 

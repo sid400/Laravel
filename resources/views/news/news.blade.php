@@ -4,7 +4,6 @@
 Новости
 @endsection
 
-
 @section('content')
 
 <section class="page_news">

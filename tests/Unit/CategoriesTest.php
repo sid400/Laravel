@@ -16,12 +16,13 @@ class CategoriesTest extends TestCase
     public function test()
     {
         $model = new Categories();
-        $cat =  $model->getCategories();
+        $cat =  $model->getActiveCategories();
         $this->assertTrue(is_array($cat));
         foreach ($cat as $key => $value) {
-           $this->assertIsInt($key);
-           $this->assertIsString($value);
-           $this->assertNotEmpty($value);
+            $this->assertisObject($value);
+        //    $this->assertIsInt($key);
+        //    $this->assertIsString($value);
+        //    $this->assertNotEmpty($value);
         }
     }
 }

@@ -6,14 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categories extends Model
 {
-    protected $categories =[
-        1 => 'Politic',
-        2 => 'Economy',
-        3 => 'IT',
-        4 => 'Healthy',
-    ];
-    function getCategories()
+
+    function getActiveCategories()
     {
-       return $this->categories;
+        $sql ="SELECT * FROM categories WHERE IsActive  =  1";
+        $rows= \DB::select($sql);  
+        return $rows;
     }
 }

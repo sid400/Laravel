@@ -49,26 +49,26 @@ class WebControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
-    public function testAdmin_add()
-    {
-        $response = $this->get('/admin/add');
+    // public function testAdmin_add()
+    // {
+    //     $response = $this->get('/admin/add');
 
-        $response->assertStatus(200);
-    }
+    //     $response->assertStatus(200);
+    // }
     public function testNews_categories()
     {
-        $response = $this->get('/news/categories');
+        $response = $this->get('/news');
 
         $response->assertStatus(200);
     }
     public function testNews_card()
     {
-        $response = $this->get('/news/card/1');
+        $response = $this->get('/news/card/5');
 
         $response->assertStatus(200);
-        $response = $this->get('/news/card/2');
+        $response = $this->get('/news/card/5');
 
         $response->assertStatus(200);
     }
-    
+
 }

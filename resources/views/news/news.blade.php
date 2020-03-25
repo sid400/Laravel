@@ -8,11 +8,11 @@
 
 <section class="page_news">
     <h1>News</h1>
-    @foreach($categories as $key => $value )
+    @foreach($categories as $key => $category )
     <div class="category">
-    <span class="NewsCategoryNum">{{$key + 1}}.</span>
-    <a class="NewsCategory" href="{{ route('news::category',$value->id) }}">{{ $value->Name}}</a>
-    <div class="NewsCategoryCount">@if(isset($Count[$value->id])){{$Count[$value->id]}}@else {{0}}@endif </div>
+        <span class="NewsCategoryNum">{{$key + 1}}.</span>
+        <a class="NewsCategory" href="{{ route('news::category',$category->id) }}">{{ $category->Name}}</a>
+        <div class="NewsCategoryCount">{{$category->count}}</div>
     </div>
     @endforeach
 </section>

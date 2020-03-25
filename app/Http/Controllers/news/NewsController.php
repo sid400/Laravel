@@ -10,22 +10,28 @@ use App\Http\Controllers\Controller;
 class NewsController extends Controller
 {
     public function index()
-    {   
-        $categories = (new Categories())->getActiveCategories();
-        $Count = (new NewsCatalog())->getCountNewsByCategory();
-        // dd($Count);
-        return view('news\News',compact('categories','Count'));
+    {
+
+        $categories = Categories::query()
+            /*Не нашел как передаь вложенный запрос, конструктором  Laravel, поэтому использовал сырой запрос*/
+            ->selectRaw('categories.id, categories.Name, categories.IsActive, (select count(*) from newsCatalog where newsCatalog.id_category = categories.id) as count')
+            ->where('IsActive' , '=', 1)
+            ->get();
+        return view('news\News', compact('categories', 'Count'));
     }
+
     public function newsCategories($id)
     {
-        $news = (new NewsCatalog())->getNewsByIdCategory($id);
+        $news = newsCatalog::query()
+            ->where('id_category', $id)
+            ->get();
+        return view('news\newsCategories', compact('news'));
 
-        return view('news\newsCategories',compact('news'));
     }
+
     public function newsCard($id)
     {
-        $news = (new NewsCatalog())->getNewsById($id);
-        // dd($news);
-        return view('news\NewsCard',compact('news'));
+        $news = newsCatalog::find($id);
+        return view('news\NewsCard', compact('news'));
     }
 }

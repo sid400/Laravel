@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index')->name('welcome');
-Route::get('/hello', 'HelloController@index')->name('hello');
-Route::get('/info', 'InfoController@index')->name('info');
-Route::get('/test', 'TestController@index')->name('test');
-Route::get('/Auth', 'AuthController@index')->name('Auth');
+Route::get('/', 'WelcomeController@index')
+    ->name('welcome');
+Route::get('/hello', 'HelloController@index')
+    ->name('hello');
+Route::get('/info', 'InfoController@index')
+    ->name('info');
+Route::get('/test', 'TestController@index')
+    ->name('test');
+Route::get('/Auth', 'AuthController@index')
+    ->name('Auth');
 
 Route::group([
     'prefix'=> 'admin',

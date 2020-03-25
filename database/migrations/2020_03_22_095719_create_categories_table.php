@@ -24,6 +24,7 @@ class CreateCategoriesTable extends Migration
             ->default('1')
             ->comment('Состояние категории');
             $table->timestamps();
+            $table->index('IsActive', 'active');
             $table->unique('Name');
         });
     }

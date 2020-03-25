@@ -136,7 +136,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -162,7 +162,8 @@
       <workItem from="1585043414182" duration="367000" />
       <workItem from="1585043796634" duration="1166000" />
       <workItem from="1585045196202" duration="2231000" />
-      <workItem from="1585047668165" duration="4621000" />
+      <workItem from="1585047668165" duration="5274000" />
+      <workItem from="1585054155741" duration="1367000" />
     </task>
     <servers />
   </component>
@@ -210,14 +211,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585046432351" />
-    <state x="781" y="342" key="SettingsEditor" timestamp="1585051920881">
+    <state x="781" y="342" key="SettingsEditor" timestamp="1585054141578">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="781" y="342" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585051920881" />
-    <state x="981" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1585047674977">
+    <state x="781" y="342" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585054141578" />
+    <state x="981" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1585054157883">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="981" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585047674977" />
+    <state x="981" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585054157883" />
     <state x="936" y="330" key="run.anything.popup" timestamp="1585046221988">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

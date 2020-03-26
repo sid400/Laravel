@@ -4,6 +4,7 @@ namespace App\Http\Controllers\news;
 
 use App\Models\Categories;
 use App\Models\NewsCatalog;
+use App\news;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +18,7 @@ class NewsController extends Controller
             ->selectRaw('categories.id, categories.Name, categories.IsActive, (select count(*) from newsCatalog where newsCatalog.id_category = categories.id) as count')
             ->where('IsActive' , '=', 1)
             ->get();
-        return view('news\News', compact('categories', 'Count'));
+        return view('news\News', compact('categories'));
     }
 
     public function newsCategories($id)
@@ -29,9 +30,9 @@ class NewsController extends Controller
 
     }
 
-    public function newsCard($id)
+    public function newsCard(newsCatalog $news)
     {
-        $news = newsCatalog::find($id);
-        return view('news\NewsCard', compact('news'));
+//        $news = newsCatalog::find($id);
+        return view('news\NewsCard', ['news' => $news]);
     }
 }

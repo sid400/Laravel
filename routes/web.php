@@ -23,28 +23,44 @@ Route::get('/Auth', 'AuthController@index')
     ->name('Auth');
 
 Route::group([
-    'prefix'=> 'admin',
-    'as'=> 'admin::',
-],function(){
-    Route::get('/', 'adminController@index')
-    ->name('main');
-    Route::match(['get','post'],'/add', 'admin\AdminNewsController@addNews')
-    ->name('add');
+    'prefix' => 'admin',
+    'as' => 'admin::',
+],
+    function () {
+        Route::get('/', 'adminController@index')
+            ->name('index');
+        Route::group([
+            'prefix' => '/news',
+            'as' => 'news::',],
+            function () {
+                Route::get('/', 'admin\AdminNewsController@index')
+                    ->name('news');
+                Route::match(['get','post'],'/create', 'admin\AdminNewsController@create')
+                    ->name('create');
+                Route::get('/delete/{id}', 'admin\AdminNewsController@delete')
+                    ->name('delete');
+                Route::match(['get','post'],'/update/{id}', 'admin\AdminNewsController@update')
+                    ->name('update');
+            }
+        );
+
+//    Route::match(['get','post'],'/add', 'admin\AdminNewsController@addNews')
+//    ->name('add');
 
 
-});
+    });
 
 Route::group([
-    'prefix'=> 'news',
-    'as'=> 'news::',
-],function(){
+    'prefix' => 'news',
+    'as' => 'news::',
+], function () {
     Route::get('/', 'news\NewsController@index')
-    ->name('news');
+        ->name('news');
     Route::get('/category/{id}', 'news\NewsController@newsCategories')
-    ->name('category');
+        ->name('category');
 
-    Route::get('/card/{id}', 'news\NewsController@newsCard')
-    ->name('id');
+    Route::get('/card/{news}', 'news\NewsController@newsCard')
+        ->name('id');
 });
 
 Auth::routes();

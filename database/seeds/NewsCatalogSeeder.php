@@ -18,7 +18,7 @@ class NewsCatalogSeeder extends Seeder
     {
         $facker = Faker\Factory::create('ru_RU');
         $data = [];
-        for ($i=0; $i <  10; $i++) { 
+        for ($i=0; $i <  50; $i++) {
             $data[] = [
                 'id_category' => rand(1,10),
                 'title' => $facker->realText(rand(10,20)),

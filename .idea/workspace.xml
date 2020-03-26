@@ -29,6 +29,17 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@host1735734_dbnewstest" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@host1735734_dbnewstest" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@host1735734_dbnewstest" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="host1735734_dbnewstest: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -145,7 +156,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/news" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -160,6 +171,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OSPanel\domains\Laravel\resources\views\admin\news" />
       <recent name="E:\OSPanel\domains\Laravel\database\seeds" />
     </key>
   </component>
@@ -211,7 +223,8 @@
       <workItem from="1585045196202" duration="2231000" />
       <workItem from="1585047668165" duration="5274000" />
       <workItem from="1585054155741" duration="1367000" />
-      <workItem from="1585121094461" duration="13084000" />
+      <workItem from="1585121094461" duration="19537000" />
+      <workItem from="1585210383523" duration="8561000" />
     </task>
     <servers />
   </component>
@@ -235,6 +248,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1059" y="405" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585049094520" />
+    <state x="1010" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585142033434">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="455" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585142033434" />
     <state x="914" y="478" width="731" height="666" key="EditFileWatcherDialog" timestamp="1585049205392">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -247,34 +264,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="441" key="FileChooserDialogImpl/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585048023706" />
-    <state width="1741" height="401" key="GridCell.Tab.0.bottom" timestamp="1585137853019">
+    <state width="1741" height="401" key="GridCell.Tab.0.bottom" timestamp="1585141523008">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585137853019" />
-    <state width="1741" height="401" key="GridCell.Tab.0.center" timestamp="1585137853018">
+    <state width="1741" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585141523008" />
+    <state width="1741" height="401" key="GridCell.Tab.0.center" timestamp="1585141523008">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585137853018" />
-    <state width="1741" height="401" key="GridCell.Tab.0.left" timestamp="1585137853018">
+    <state width="1741" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585141523008" />
+    <state width="1741" height="401" key="GridCell.Tab.0.left" timestamp="1585141523008">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585137853018" />
-    <state width="1741" height="401" key="GridCell.Tab.0.right" timestamp="1585137853018">
+    <state width="1741" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585141523008" />
+    <state width="1741" height="401" key="GridCell.Tab.0.right" timestamp="1585141523008">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1741" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585137853018" />
+    <state width="1741" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585141523008" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585127550803">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585127550803" />
-    <state x="781" y="342" key="SettingsEditor" timestamp="1585054141578">
+    <state x="781" y="342" key="SettingsEditor" timestamp="1585210508125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="781" y="342" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585054141578" />
-    <state x="981" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1585121130865">
+    <state x="781" y="342" key="SettingsEditor/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585210508125" />
+    <state x="981" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1585210467052">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="981" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585121130865" />
+    <state x="981" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/2560.360.1920.1040@0.0.2560.1400" timestamp="1585210467052" />
     <state x="936" y="330" key="run.anything.popup" timestamp="1585046221988">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

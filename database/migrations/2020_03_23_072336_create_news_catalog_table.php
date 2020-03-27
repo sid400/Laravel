@@ -32,7 +32,8 @@ class CreateNewsCatalogTable extends Migration
             $table->index('id_category', 'category');
             $table->index('IsActive', 'active');
             $table->index('PublishDate', 'publish');
-            $table->foreign('id_category')->references('id')->on('categories');
+//            FIXIT: Разобраться с внешними ключами
+//            $table->foreign('id_category')->references('id')->on('categories');
         });
     }
 

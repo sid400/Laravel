@@ -32,8 +32,9 @@ class CreateCommentsTable extends Migration
             $table->index('id_user', 'forUser');
             $table->index(['id_user','PublishDate'], 'forWievInNews');
 //            Foreign Keys
-            $table->foreign('id_news')->references('id')->on('newsCatalog');
-            $table->foreign('id_user')->references('id')->on('users');
+//            FIXIT: Разобраться с внешними ключами
+//            $table->foreign('id_news')->references('id')->on('newsCatalog');
+//            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

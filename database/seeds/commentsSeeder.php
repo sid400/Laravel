@@ -24,8 +24,8 @@ class commentsSeeder extends Seeder
                 'id_user' => rand(1,10),
                 'PublishDate' => $facker->date('Y-m-d'),
                 'content' => $facker->realText(rand(100,600)),
-                'created_at' => $facker->dateTime(),
-                'updated_at' => $facker->dateTime()
+                'created_at' => $facker->date('Y-m-d'),
+                'updated_at' => $facker->date('Y-m-d')
 
             ];
         }

@@ -37,5 +37,5 @@ class commentsController extends Controller
 //        $categories = Categories::all();
 //        $model =  newsCatalog::find($id);
 //        return view('admin.news.update',compact('categories','model','id'));
-    }
+//    }
 }

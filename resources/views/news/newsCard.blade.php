@@ -16,5 +16,16 @@
     <p class="text">{{$news->content }} </p>
     <p class="text-black-50">Сатья создана:{{$news->created_at }} </p>
 </section>
+<section class="commets">
+    <h3>Комментарии</h3>
+    @foreach($comments as $key => $comment)
+    <div class="NewsCard">
+    <p class="text">{{$comment->content }} </p>
+        <a href="{{ route('comment::delete',[$news->id ,$comment->id]) }}" class="btn btn-danger m-1">Удалить</a>
+    </div>
+    @endforeach
+
+
+</section>
 
 @endsection

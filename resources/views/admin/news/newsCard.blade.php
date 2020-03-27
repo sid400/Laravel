@@ -17,4 +17,6 @@
     <p class="text-black-50">Сатья создана:{{$news->created_at }} </p>
 </section>
 
+
+
 @endsection

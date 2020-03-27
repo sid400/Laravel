@@ -63,6 +63,18 @@ Route::group([
         ->name('id');
 });
 
+
+Route::group([
+    'prefix' => 'comment',
+    'as' => 'comment::',
+], function () {
+    Route::get('/', 'Comments\commentsController@index')
+        ->name('index');
+    Route::get('/delete/{id_news}/{id_comment}', 'Comments\commentsController@delete')
+        ->name('delete');
+
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

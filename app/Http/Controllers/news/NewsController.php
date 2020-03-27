@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\news;
 
 use App\Models\Categories;
+use App\Models\comments;
 use App\Models\NewsCatalog;
 use App\news;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class NewsController extends Controller
         $categories = Categories::query()
             /*Не нашел как передаь вложенный запрос, конструктором  Laravel, поэтому использовал сырой запрос*/
             ->selectRaw('categories.id, categories.Name, categories.IsActive, (select count(*) from newsCatalog where newsCatalog.id_category = categories.id) as count')
-            ->where('IsActive' , '=', 1)
+            ->where('IsActive', '=', 1)
             ->get();
         return view('news\News', compact('categories'));
     }
@@ -32,7 +33,12 @@ class NewsController extends Controller
 
     public function newsCard(newsCatalog $news)
     {
+        $id_news = $news->id;
 //        $news = newsCatalog::find($id);
-        return view('news\NewsCard', ['news' => $news]);
+        $comments = comments::query()
+        ->select()
+            ->where('id_news', '=', $id_news)
+        ->get();
+        return view('news\NewsCard', ['news' => $news, 'comments' => $comments]);
     }
 }

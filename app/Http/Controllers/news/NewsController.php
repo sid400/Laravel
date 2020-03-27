@@ -8,6 +8,7 @@ use App\Models\NewsCatalog;
 use App\news;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use phpDocumentor\Reflection\DocBlock\StandardTagFactory;
 
 class NewsController extends Controller
 {
@@ -19,7 +20,7 @@ class NewsController extends Controller
             ->selectRaw('categories.id, categories.Name, categories.IsActive, (select count(*) from newsCatalog where newsCatalog.id_category = categories.id) as count')
             ->where('IsActive', '=', 1)
             ->get();
-        return view('news\News', compact('categories'));
+        return view('news.News', compact('categories'));
     }
 
     public function newsCategories($id)
@@ -27,7 +28,7 @@ class NewsController extends Controller
         $news = newsCatalog::query()
             ->where('id_category', $id)
             ->get();
-        return view('news\newsCategories', compact('news'));
+        return view('news.newsCategories', compact('news'));
 
     }
 
@@ -36,9 +37,9 @@ class NewsController extends Controller
         $id_news = $news->id;
 //        $news = newsCatalog::find($id);
         $comments = comments::query()
-        ->select()
+            ->select()
             ->where('id_news', '=', $id_news)
-        ->get();
-        return view('news\NewsCard', ['news' => $news, 'comments' => $comments]);
+            ->get();
+        return view('news.NewsCard', ['news' => $news, 'comments' => $comments]);
     }
 }

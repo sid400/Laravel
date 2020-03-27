@@ -27,7 +27,7 @@ Route::group([
     'as' => 'admin::',
 ],
     function () {
-        Route::get('/', 'adminController@index')
+        Route::get('/', 'AdminController@index')
             ->name('index');
         Route::group([
             'prefix' => '/news',

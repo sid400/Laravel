@@ -1,0 +1,4 @@
+Description: Для тестирования страниц, иммитация действий пользователя
+Link: https://laravel.com/docs/5.8/dusk
+composer require --dev laravel/dusk - command to load
+php artisan dusk:install  command to init

@@ -1,7 +1,0 @@
-{    
-    "less.compile": {
-
-        "main":"main.less",
-        "out": "../css/style.css"
-    }
-}

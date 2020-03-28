@@ -4,5 +4,5 @@
     <a href="{{ route('info') }}">info</a>
     <a href="{{ route('news::news') }}">news</a>
     <a href="{{ route('Auth') }}">Auth</a>
-    <a href="{{ route('admin::main') }}">Admin</a>
+    <a href="{{ route('admin::index') }}">Admin</a>
 </section>

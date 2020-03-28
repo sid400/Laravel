@@ -17,16 +17,23 @@ class CreateNewsCatalogTable extends Migration
         Schema::create('newsCatalog', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_category')
-            ->comment('ID категории');
+                ->comment('ID категории');
             $table->string('title', 100)
-            ->comment('Заголовок статьи');
+                ->comment('Заголовок статьи');
             $table->text('content')
-            ->comment('Содержание статьи');
+                ->comment('Содержание статьи');
             $table->boolean('IsActive')
-            ->default('1')
-            ->comment('Состояние новости');
+                ->default('0')
+                ->comment('Состояние новости');
+            $table->dateTime('PublishDate')
+                ->nullable()
+                ->comment('Дата публикация новости');
             $table->timestamps();
-            $table->foreign('id_category')->references('id')->on('categories');
+            $table->index('id_category', 'category');
+            $table->index('IsActive', 'active');
+            $table->index('PublishDate', 'publish');
+//            FIXIT: Разобраться с внешними ключами
+//            $table->foreign('id_category')->references('id')->on('categories');
         });
     }
 

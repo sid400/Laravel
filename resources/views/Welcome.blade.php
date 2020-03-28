@@ -64,9 +64,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="hello">Hello</a>
-                    <a href="info">info</a>
-                    <a href="news">news</a>
+                    <a href="{{ route('hello') }}">Hello</a>
+                    <a href="{{ route('info') }}">info</a>
+                    <a href="{{ route('news::news') }}">news</a>
                 </div>
             </div>
         </div>

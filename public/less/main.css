@@ -11,6 +11,9 @@ body {
   max-width: 80vw;
   margin: 0 auto;
 }
+.linker {
+  margin: 0 2%;
+}
 .linker > a {
   height: 5vh;
   color: #636b6f;
@@ -26,6 +29,7 @@ body {
 }
 .logo_text {
   margin: 0 auto;
+  font-size: 6.5em;
 }
 .page_hello {
   font-size: 10rem;
@@ -42,14 +46,9 @@ body {
   margin-left: 10px;
 }
 .category {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-content: center;
+  align-items: center;
 }
 .NewsCategoryNum {
   display: inline-block;
@@ -74,3 +73,12 @@ body {
   color: white;
   margin-left: 10px;
 }
+.NewsCard {
+  margin: 2% 2%;
+  box-shadow: 20px 20px 60px rgba(51, 48, 50, 0.2);
+  padding: 30px 15px 0 15px;
+}
+.text {
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=main.css.map */

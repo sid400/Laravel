@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function addNews()
+    public function index()
     {
-        return view('admin/news/AddNews');
+        return view('admin.index');
     }
 }

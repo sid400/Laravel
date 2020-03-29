@@ -6,3 +6,6 @@ php artisan dusk:install  command to init
 --------------------------------------------
 LARAVEL COLLECTIVE FORM
 Не установленно
+
+--------------------------------------------
+

@@ -1,84 +1,99 @@
 html,
 body {
-  background-color: #fff;
-  color: #636b6f;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 200;
-  height: 100vh;
-  margin: 0;
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
 }
+
 body {
-  max-width: 80vw;
-  margin: 0 auto;
+    max-width: 80vw;
+    margin: 0 auto;
 }
+
 .linker {
-  margin: 0 2%;
+    margin: 0 2%;
 }
+
 .linker > a {
-  height: 5vh;
-  color: #636b6f;
-  padding: 0 25px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-decoration: none;
-  text-transform: uppercase;
+    height: 5vh;
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }
+
 .linker > a:hover {
-  color: #3b4042;
+    color: #3b4042;
 }
+
 .logo_text {
-  margin: 0 auto;
-  font-size: 6.5em;
+    margin: 0 auto;
+    font-size: 6.5em;
 }
+
 .page_hello {
-  font-size: 10rem;
-  text-transform: uppercase;
-  text-align: center;
-  height: 95vh;
-  line-height: 95vh;
+    font-size: 10rem;
+    text-transform: uppercase;
+    text-align: center;
+    height: 95vh;
+    line-height: 95vh;
 }
+
 .page_hello h1 {
-  margin: 0;
+    margin: 0;
 }
+
 .page_info span {
-  text-transform: capitalize;
-  margin-left: 10px;
+    text-transform: capitalize;
+    margin-left: 10px;
 }
+
 .category {
-  display: flex;
-  align-content: center;
-  align-items: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
 }
+
 .NewsCategoryNum {
-  display: inline-block;
-  height: 50px;
-  font-size: 30px;
+    display: inline-block;
+    height: 50px;
+    font-size: 30px;
 }
+
 .NewsCategory {
-  display: inline-block;
-  height: 50px;
-  font-size: 30px;
-  margin-left: 15px;
+    display: inline-block;
+    height: 50px;
+    font-size: 30px;
+    margin-left: 15px;
 }
+
 .NewsCategoryCount {
-  display: inline-block;
-  line-height: 30px;
-  font-size: 10px;
-  height: 30px;
-  min-width: 30px;
-  border-radius: 50%;
-  background-color: grey;
-  text-align: center;
-  color: white;
-  margin-left: 10px;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 10px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    text-align: center;
+    color: white;
+    margin-left: 10px;
 }
+
 .NewsCard {
-  margin: 2% 2%;
-  box-shadow: 20px 20px 60px rgba(51, 48, 50, 0.2);
-  padding: 30px 15px 0 15px;
+    margin: 2% 2%;
+    box-shadow: 20px 20px 60px rgba(51, 48, 50, 0.2);
+    padding: 30px 15px 0 15px;
 }
+
 .text {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
+
 /*# sourceMappingURL=main.css.map */

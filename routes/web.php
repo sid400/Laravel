@@ -72,6 +72,10 @@ Route::group([
         ->name('index');
     Route::get('/delete/{id_news}/{id_comment}', 'Comments\commentsController@delete')
         ->name('delete');
+    Route::get('/create/{id}', 'Comments\commentsController@create')
+        ->name('create');
+    Route::post('/save', 'Comments\commentsController@save')
+        ->name('save');
 
 });
 

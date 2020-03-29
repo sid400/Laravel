@@ -18,6 +18,7 @@
 </section>
 <section class="commets">
     <h3>Комментарии</h3>
+    <a href="{{ route('comment::create',$news->id )}}" class="btn btn-danger m-1">Добавить</a>
     @foreach($comments as $key => $comment)
     <div class="NewsCard">
     <p class="text">{{$comment->content }} </p>

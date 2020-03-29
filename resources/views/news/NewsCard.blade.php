@@ -23,6 +23,7 @@
     <div class="NewsCard">
     <p class="text">{{$comment->content }} </p>
         <a href="{{ route('comment::delete',[$news->id ,$comment->id]) }}" class="btn btn-danger m-1">Удалить</a>
+        <a href="{{ route('comment::update',[$comment->id]) }}" class="btn btn-secondary m-1">Редактировать</a>
     </div>
     @endforeach
 

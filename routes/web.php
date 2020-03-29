@@ -76,6 +76,8 @@ Route::group([
         ->name('create');
     Route::post('/save', 'Comments\commentsController@save')
         ->name('save');
+    Route::get('/update/{id_comment}', 'Comments\commentsController@update')
+        ->name('update');
 
 });
 

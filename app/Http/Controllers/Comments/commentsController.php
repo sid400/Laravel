@@ -21,15 +21,23 @@ class commentsController extends Controller
 return view('comment.create', compact('id'));
         }
 
-    function update(){
+    function update($id_comment){
+        $comment = comments::find($id_comment);
 
+        return view('comment.update',compact('comment'));
     }
 
     function save(SaveCommentRequest $request){
+        $id = $request->all('id')['id'];
         $model = new comments();
+        if (!is_null($id)){
+            $model = comments::find($id);
+        }
         $model->fill($request->all());
         $model->save();
-        return redirect()->route('news::id', '10');
+        $id_news = $request->all('id_news');
+        $id_news = $id_news['id_news'];
+        return redirect()->route('news::id', $id_news);
     }
 
 

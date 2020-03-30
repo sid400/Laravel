@@ -31,12 +31,7 @@ class WebControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
-    public function testtest()
-    {
-        $response = $this->get('/test');
 
-        $response->assertStatus(200);
-    }
     public function testAuth()
     {
         $response = $this->get('/Auth');

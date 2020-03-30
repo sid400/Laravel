@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Categories;
-use App\Models\newsCatalog;
+use App\Models\NewsCatalog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,7 +12,7 @@ class AdminNewsController extends Controller
 {
     function index()
     {
-        $news = newsCatalog::query()
+        $news = NewsCatalog::query()
             ->paginate(5);
 //     dd($news);
         return view('admin.news.news', compact('news'));
@@ -20,15 +20,15 @@ class AdminNewsController extends Controller
 
     function delete($id)
     {
-        $news = newsCatalog::destroy($id);
+        $news = NewsCatalog::destroy($id);
         return redirect()->route('admin::news::news');
     }
 
     function create(Request $request)
     {
         if ($request->isMethod('post')) {
-            $this->validate($request, newsCatalog::rules,[],newsCatalog::attributeNames());
-            $model = new newsCatalog();
+            $this->validate($request, NewsCatalog::rules,[],NewsCatalog::attributeNames());
+            $model = new NewsCatalog();
             $model->fill($request->all());
             $model->save();
             return redirect()->route('admin::news::create');
@@ -40,14 +40,14 @@ class AdminNewsController extends Controller
     function update(Request $request, $id)
     {
         if ($request->isMethod('post')) {
-            $this->validate($request, newsCatalog::rules);
-            $model = newsCatalog::find($id);
+            $this->validate($request, NewsCatalog::rules);
+            $model = NewsCatalog::find($id);
             $model->fill($request->all());
             $model->save();
             return redirect()->route('admin::news::news');
         }
         $categories = Categories::all();
-        $model = newsCatalog::find($id);
+        $model = NewsCatalog::find($id);
         return view('admin.news.update', compact('categories', 'model', 'id'));
     }
 }

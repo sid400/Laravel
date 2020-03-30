@@ -25,14 +25,14 @@ class NewsController extends Controller
 
     public function newsCategories($id)
     {
-        $news = newsCatalog::query()
+        $news = NewsCatalog::query()
             ->where('id_category', $id)
             ->get();
         return view('news.newsCategories', compact('news'));
 
     }
 
-    public function newsCard(newsCatalog $news)
+    public function newsCard(NewsCatalog $news)
     {
         $id_news = $news->id;
 //        $news = newsCatalog::find($id);

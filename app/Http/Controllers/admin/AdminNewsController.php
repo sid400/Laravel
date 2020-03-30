@@ -27,7 +27,7 @@ class AdminNewsController extends Controller
     function create(Request $request)
     {
         if ($request->isMethod('post')) {
-            $this->validate($request, newsCatalog::rules);
+            $this->validate($request, newsCatalog::rules,[],newsCatalog::attributeNames());
             $model = new newsCatalog();
             $model->fill($request->all());
             $model->save();

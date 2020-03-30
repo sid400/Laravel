@@ -14,4 +14,10 @@ class newsCatalog extends Model
         'IsActive' => 'boolean',
         'id_category' => 'Required|exists:categories,id',
     ];
+    public static function attributeNames()
+    {
+       return[
+           'id_category' => 'Категория'
+       ];
+    }
 }

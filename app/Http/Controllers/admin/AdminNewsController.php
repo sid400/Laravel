@@ -3,44 +3,51 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Categories;
-use App\Models\newsCatalog;
-use App\news;
+use App\Models\NewsCatalog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
 class AdminNewsController extends Controller
 {
-    function index(){
-     $news = newsCatalog::query()
-     ->paginate(5);
+    function index()
+    {
+        $news = NewsCatalog::query()
+            ->paginate(5);
 //     dd($news);
-       return view('admin.news.news',compact('news'));
+        return view('admin.news.news', compact('news'));
     }
-    function delete($id){
-        $news = newsCatalog::destroy($id);
+
+    function delete($id)
+    {
+        $news = NewsCatalog::destroy($id);
         return redirect()->route('admin::news::news');
     }
-    function create(Request $request){
-    if ($request->isMethod('post')){
-        $model = new newsCatalog();
-        $model->fill($request->all());
-        $model->save();
-        return redirect()->route('admin::news::create');
-    }
-        $categories = Categories::all();
 
-    return view('admin.news.create',compact('categories'));
+    function create(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $this->validate($request, NewsCatalog::rules,[],NewsCatalog::attributeNames());
+            $model = new NewsCatalog();
+            $model->fill($request->all());
+            $model->save();
+            return redirect()->route('admin::news::create');
+        }
+        $categories = Categories::all();
+        return view('admin.news.create', compact('categories'));
     }
-    function update(Request $request, $id){
-        if ($request->isMethod('post')){
-            $model =  newsCatalog::find($id);
+
+    function update(Request $request, $id)
+    {
+        if ($request->isMethod('post')) {
+            $this->validate($request, NewsCatalog::rules);
+            $model = NewsCatalog::find($id);
             $model->fill($request->all());
             $model->save();
             return redirect()->route('admin::news::news');
         }
         $categories = Categories::all();
-        $model =  newsCatalog::find($id);
-        return view('admin.news.update',compact('categories','model','id'));
+        $model = NewsCatalog::find($id);
+        return view('admin.news.update', compact('categories', 'model', 'id'));
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\news;
 
 use App\Models\Categories;
-use App\Models\comments;
+use App\Models\Comments;
 use App\Models\NewsCatalog;
 use App\news;
 use Illuminate\Http\Request;
@@ -25,18 +25,18 @@ class NewsController extends Controller
 
     public function newsCategories($id)
     {
-        $news = newsCatalog::query()
+        $news = NewsCatalog::query()
             ->where('id_category', $id)
             ->get();
         return view('news.newsCategories', compact('news'));
 
     }
 
-    public function newsCard(newsCatalog $news)
+    public function newsCard(NewsCatalog $news)
     {
         $id_news = $news->id;
 //        $news = newsCatalog::find($id);
-        $comments = comments::query()
+        $comments = Comments::query()
             ->select()
             ->where('id_news', '=', $id_news)
             ->get();

@@ -8,19 +8,28 @@
 @section('content')
 <section class="page_admin_addnews">
     <H1>Update News</H1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{ route('admin::news::update',$id) }}" method="post">
         @csrf
         <div class="form-group">
-            <label for="news_title">Заголовок</label>
+            <label for="title">Заголовок</label>
             <input name="title" type="text" class="form-control" id="title" value="{{$model->title}}">
         </div>
         <div class="form-group">
-            <label for="news_data">Содержание</label>
+            <label for="content">Содержание</label>
             <textarea name="content" type="text" class="form-control" id="content"
                       rows="5">{{$model->content}}</textarea>
         </div>
         <div class="form-group">
-            <span>Сделать активной</span>
+            <label for="IsActive">Сделать активной</label>
             <input type="checkbox" id="IsActive" name="IsActive" value="1"
                    @if($model->IsActive === 1)
             checked

@@ -17,8 +17,6 @@ Route::get('/hello', 'HelloController@index')
     ->name('hello');
 Route::get('/info', 'InfoController@index')
     ->name('info');
-Route::get('/test', 'TestController@index')
-    ->name('test');
 Route::get('/Auth', 'AuthController@index')
     ->name('Auth');
 
@@ -72,6 +70,12 @@ Route::group([
         ->name('index');
     Route::get('/delete/{id_news}/{id_comment}', 'Comments\commentsController@delete')
         ->name('delete');
+    Route::get('/create/{id}', 'Comments\commentsController@create')
+        ->name('create');
+    Route::post('/save', 'Comments\commentsController@save')
+        ->name('save');
+    Route::get('/update/{id_comment}', 'Comments\commentsController@update')
+        ->name('update');
 
 });
 

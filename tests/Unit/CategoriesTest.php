@@ -15,9 +15,8 @@ class CategoriesTest extends TestCase
      */
     public function test()
     {
-        $model = new Categories();
-        $cat =  $model->getActiveCategories();
-        $this->assertTrue(is_array($cat));
+        $cat =  Categories::all();
+        $this->assertIsObject($cat);
         foreach ($cat as $key => $value) {
             $this->assertisObject($value);
         //    $this->assertIsInt($key);

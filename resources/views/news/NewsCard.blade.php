@@ -18,10 +18,12 @@
 </section>
 <section class="commets">
     <h3>Комментарии</h3>
+    <a href="{{ route('comment::create',$news->id )}}" class="btn btn-danger m-1">Добавить</a>
     @foreach($comments as $key => $comment)
     <div class="NewsCard">
     <p class="text">{{$comment->content }} </p>
         <a href="{{ route('comment::delete',[$news->id ,$comment->id]) }}" class="btn btn-danger m-1">Удалить</a>
+        <a href="{{ route('comment::update',[$comment->id]) }}" class="btn btn-secondary m-1">Редактировать</a>
     </div>
     @endforeach
 

@@ -19,6 +19,8 @@ Route::get('/info', 'InfoController@index')
     ->name('info');
 Route::get('/Auth', 'AuthController@index')
     ->name('Auth');
+Route::get('/Test', 'TestController@index')
+    ->name('test');
 
 Route::group([
     'prefix' => 'admin',
@@ -66,7 +68,7 @@ Route::group([
     'prefix' => 'comment',
     'as' => 'comment::',
 ], function () {
-    Route::get('/', 'Comments\commentsController@index')
+    Route::get('/{id_news}', 'Comments\commentsController@index')
         ->name('index');
     Route::get('/delete/{id_news}/{id_comment}', 'Comments\commentsController@delete')
         ->name('delete');

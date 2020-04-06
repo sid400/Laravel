@@ -9,10 +9,16 @@ use App\Http\Controllers\Controller;
 
 class commentsController extends Controller
 {
-    function index()
+    function index($id_news)
     {
-        $comments = Comments::all();
+        $comments = Comments::query()
+            ->select()
+            ->where('id_news', '=', $id_news)
+            ->get();
+        return $comments;
     }
+
+
 
     function delete($id_news, $id_comment)
     {

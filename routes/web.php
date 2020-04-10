@@ -24,6 +24,7 @@ Route::get('/info/{id}', 'InfoController@test')
 Route::group([
     'prefix' => 'admin',
     'as' => 'admin::',
+    'middleware'=> ['auth'],
 ],
     function () {
         Route::get('/', 'AdminController@index')
@@ -40,6 +41,17 @@ Route::group([
                     ->name('delete');
                 Route::match(['get','post'],'/update/{id}', 'admin\AdminNewsController@update')
                     ->name('update');
+            }
+        );
+
+        Route::group([
+            'prefix' => '/profile',
+            'as' => 'profile::',],
+            function () {
+                Route::match(['get','post'],'/update', 'admin\ProfileController@update')
+                    ->name('update')
+                ->middleware('validate')
+                ;
             }
         );
 

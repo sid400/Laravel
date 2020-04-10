@@ -31,10 +31,12 @@ class AdminNewsController extends Controller
             $model = new NewsCatalog();
             $model->fill($request->all());
             $model->save();
-            return redirect()->route('admin::news::create');
+            return redirect()->route('admin::news::create')
+                ->with('success', 'Отлично новость добавленна');
         }
         $categories = Categories::all();
-        return view('admin.news.create', compact('categories'));
+        $done = session('success');
+        return view('admin.news.create', compact('categories','done'));
     }
 
     function update(Request $request, $id)

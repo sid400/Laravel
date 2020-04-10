@@ -53,6 +53,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'validate' => \App\Http\Middleware\ValidateProfileChange::class,
         'testafter' => \App\Http\Middleware\testafter::class,
         'testbefore' => \App\Http\Middleware\testbefore::class,
         'auth' => \App\Http\Middleware\Authenticate::class,

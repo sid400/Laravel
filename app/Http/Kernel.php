@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\testafter;
+use App\Http\Middleware\testbefore;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -51,6 +53,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'testafter' => \App\Http\Middleware\testafter::class,
+        'testbefore' => \App\Http\Middleware\testbefore::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,

@@ -17,8 +17,9 @@ Route::get('/hello', 'HelloController@index')
     ->name('hello');
 Route::get('/info', 'InfoController@index')
     ->name('info');
-Route::get('/Auth', 'AuthController@index')
-    ->name('Auth');
+Route::get('/info/{id}', 'InfoController@test')
+    ->name('info2')
+    ->middleware('testbefore','testafter');
 
 Route::group([
     'prefix' => 'admin',

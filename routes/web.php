@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
+ |---------------------------------------------
+ | Main routes
+ |---------------------------------------------
+ */
 Route::get('/', 'WelcomeController@index')
     ->name('welcome');
 Route::get('/hello', 'HelloController@index')
@@ -19,48 +23,66 @@ Route::get('/info', 'InfoController@index')
     ->name('info');
 Route::get('/info/{id}', 'InfoController@test')
     ->name('info2')
-    ->middleware('testbefore','testafter');
+    ->middleware('testbefore', 'testafter');
+Route::get('/home', 'HomeController@index')
+    ->name('home');
+/*
+ |---------------------------------------------
+ | Admin routes
+ |---------------------------------------------
+ */
 
 Route::group([
     'prefix' => 'admin',
     'as' => 'admin::',
-    'middleware'=> ['auth'],
+    'middleware' => ['auth'],
 ],
     function () {
         Route::get('/', 'AdminController@index')
             ->name('index');
+        /* GROUP news */
         Route::group([
             'prefix' => '/news',
             'as' => 'news::',],
             function () {
                 Route::get('/', 'admin\AdminNewsController@index')
                     ->name('news');
-                Route::match(['get','post'],'/create', 'admin\AdminNewsController@create')
+                Route::match(['get', 'post'], '/create', 'admin\AdminNewsController@create')
                     ->name('create');
                 Route::get('/delete/{id}', 'admin\AdminNewsController@delete')
                     ->name('delete');
-                Route::match(['get','post'],'/update/{id}', 'admin\AdminNewsController@update')
+                Route::match(['get', 'post'], '/update/{id}', 'admin\AdminNewsController@update')
                     ->name('update');
             }
         );
-
+        /* GROUP profile */
         Route::group([
             'prefix' => '/profile',
             'as' => 'profile::',],
             function () {
-                Route::match(['get','post'],'/update', 'admin\ProfileController@update')
+                Route::match(['get', 'post'], '/update', 'admin\ProfileController@update')
                     ->name('update')
-                ->middleware('validate')
-                ;
+                    ->middleware('validate');
             }
         );
-
-//    Route::match(['get','post'],'/add', 'admin\AdminNewsController@addNews')
-//    ->name('add');
-
-
+        /* GROUP parser */
+        Route::group([
+            'prefix' => '/parser',
+            'as' => 'parser::',],
+            function () {
+                Route::get('/', 'admin\ParserConroller@index')
+                    ->name('parser');
+                Route::post('/load', 'admin\ParserConroller@loadNewsFromRss')
+                    ->name('load');
+            }
+        );
     });
 
+/*
+ |---------------------------------------------
+ | news routes
+ |---------------------------------------------
+ */
 Route::group([
     'prefix' => 'news',
     'as' => 'news::',
@@ -74,7 +96,11 @@ Route::group([
         ->name('id');
 });
 
-
+/*
+ |---------------------------------------------
+ | comment routes
+ |---------------------------------------------
+ */
 Route::group([
     'prefix' => 'comment',
     'as' => 'comment::',
@@ -92,6 +118,12 @@ Route::group([
 
 });
 
+/*
+ |---------------------------------------------
+ | Auth routes
+ |---------------------------------------------
+ */
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+

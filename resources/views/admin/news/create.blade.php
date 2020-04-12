@@ -3,7 +3,13 @@
 @section('title')
     Админка
 @endsection
-
+@if($done)
+    <div class="container">
+        <div class="alert alert-success fade show">
+            {{$done}}
+        </div>
+    </div>
+@endif
 
 @section('content')
     <section class="page_admin_addnews">

@@ -30,3 +30,23 @@ XML parser
 
 composer require "orchestra/parser" - latest version
 composer require "orchestra/parser=^3.8" - version for laravel 5.8
+
+--------------------------------------------------------------------------------------
+providers for Vkontakte
+composer require socialiteproviders/vkontakte
+
+ IN app/Providers/EventServiceProvider.php
+ use SocialiteProviders\VKontakte\VKontakteExtendSocialite;
+ add $listen
+         SocialiteWasCalled::class => [
+             VKontakteExtendSocialite::class,
+         ],
+  IN config/services.php
+    'vkontakte' => [
+        'client_id' => env('VKONTAKTE_KEY'),
+        'client_secret' => env('VKONTAKTE_SECRET'),
+        'redirect' => env('VKONTAKTE_REDIRECT_URI')
+    ],
+
+
+

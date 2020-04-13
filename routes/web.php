@@ -125,5 +125,8 @@ Route::group([
  */
 
 Auth::routes();
-
+Route::get('/Auth/VK', 'Auth\SocialController@login')
+    ->name('loginVK');
+Route::get('/Auth/ResponseVK', 'Auth\SocialController@responseVK')
+    ->name('ResponseVK');
 

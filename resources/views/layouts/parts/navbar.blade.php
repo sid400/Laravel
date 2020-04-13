@@ -5,6 +5,7 @@
     <a href="{{ route('news::news') }}">news</a>
 {{--    <a href="{{ route('Auth') }}">Auth</a>--}}
     @guest
+        <a href="{{ route('loginVK') }}">VK</a>
     @else
     <a href="{{ route('admin::index') }}">Admin</a>
     @endguest

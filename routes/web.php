@@ -129,4 +129,8 @@ Route::get('/Auth/VK', 'Auth\SocialController@login')
     ->name('loginVK');
 Route::get('/Auth/ResponseVK', 'Auth\SocialController@responseVK')
     ->name('ResponseVK');
+Route::get('/Auth/Git', 'Auth\SocialController@Git')
+    ->name('loginGit');
+Route::get('/Auth/ResponseGit', 'Auth\SocialController@responseGit')
+    ->name('ResponseGit');
 

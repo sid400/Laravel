@@ -8,7 +8,7 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 use SocialiteProviders\VKontakte\VKontakteExtendSocialite;
-
+use SocialiteProviders\GitHub\GitHubExtendSocialite;
 class EventServiceProvider extends ServiceProvider
 {
     /**
@@ -22,7 +22,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         SocialiteWasCalled::class => [
             VKontakteExtendSocialite::class,
-        ]
+        ],
+        SocialiteWasCalled::class => [
+            GitHubExtendSocialite::class
+        ],
     ];
 
     /**

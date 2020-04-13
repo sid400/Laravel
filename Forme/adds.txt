@@ -1,3 +1,15 @@
+---------------------------------------
+Не забудь указать
+.env
+Ghfdbkmysq flhtcc cfqnf
+
+---------------------------------------
+ARTISAN
+
+php artisan route:clear - очистка кеша роутов
+
+php artisan config:clear - очистка кеша конфигов
+---------------------------------------
 DUSK
 Description: Для тестирования страниц, иммитация действий пользователя
 Link: https://laravel.com/docs/5.8/dusk
@@ -48,5 +60,27 @@ composer require socialiteproviders/vkontakte
         'redirect' => env('VKONTAKTE_REDIRECT_URI')
     ],
 
+    -----------------------------------------------------------------
+    HTML redactor
+    https://unisharp.github.io/laravel-filemanager/installation
+ composer require  unisharp/laravel-filemanager:~1.8
 
+php artisan vendor:publish --tag=lfm_config
 
+php artisan vendor:publish --tag=lfm_public
+php artisan route:clear
+php artisan config:clear
+php artisan storage:link
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/ckeditor.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/adapters/jquery.js"></script>
+    <script>
+        $('ID_TEXTAREA').ckeditor({
+            height: 100,
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+        });
+    </script>

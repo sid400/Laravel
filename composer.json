@@ -17,7 +17,8 @@
         "orchestra/parser": "^3.8",
         "socialiteproviders/github": "dev-master",
         "socialiteproviders/vkontakte": "^4.0",
-        "spatie/laravel-permission": "^3.11"
+        "spatie/laravel-permission": "^3.11",
+        "unisharp/laravel-filemanager": "~1.8"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

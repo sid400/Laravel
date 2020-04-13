@@ -37,7 +37,7 @@
                     </div>
                 @endif
                 <label for="news_data">Содержание</label>
-                <textarea name="content" type="text" class="form-control" id="content"
+                <textarea name="content" type="text" class="form-control" id="news-content"
                           rows="5">{{$model->content ?? old('content')}}</textarea>
             </div>
             <div class="form-group">
@@ -74,5 +74,27 @@
             <button type="submit" class="btn btn-success">Создать</button>
         </form>
     </section>
-
+    {{--    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>--}}
+    {{--    <script>--}}
+    {{--        var options = {--}}
+    {{--            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',--}}
+    {{--            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',--}}
+    {{--            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',--}}
+    {{--            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='--}}
+    {{--        };--}}
+    {{--        --}}
+    {{--        CKEDITOR.replace('#news-content',options);--}}
+    {{--    </script>--}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/ckeditor.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/adapters/jquery.js"></script>
+    <script>
+        $('#news-content').ckeditor({
+            height: 100,
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+        });
+    </script>
 @endsection
